@@ -12,6 +12,7 @@ if len(sys.argv) == 1:
     sys.exit(1)
 
 args = parser.parse_args()
+args.seq = args.seq.upper()                 # Note we just added this line
 
 if re.search('^[ACGTU]+$', args.seq):
     if re.search('T', args.seq):
