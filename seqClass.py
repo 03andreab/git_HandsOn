@@ -17,14 +17,16 @@ args.seq = args.seq.upper()                 # Note we just added this line
 
 #if contain T is DNA or U RNA
 if re.search('^[ACGTU]+$', args.seq):
-    if re.search('T', args.seq):
-        print ('The sequence is DNA')
-    elif re.search('U', args.seq):
-        print ('The sequence is RNA')
+    if 'T' in args.seq and 'U' in args.seq:
+        print('The sequence contains T  and U')
+    elif 'T' in args.seq:
+        print('The sequence is DNA')
+    elif 'U' in args.seq:
+        print('The sequence is RNA')
     else:
-        print ('The sequence can be DNA or RNA')
+        print('The sequence is neither standard DNA nor RNA')
 else:
-    print ('The sequence is not DNA nor RNA')
+    print('The sequence contains invalid characters')
 
 # Print motif
 if args.motif:
